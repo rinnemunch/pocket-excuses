@@ -7,9 +7,13 @@ class Program
     {
         string template = "I couldn't finish my homework because my {0} exploded";
 
-        string wildcard = "microwave";
+        string[] wildcards = { "microwave", "printer", "dog", "hamster", "bacon" };
 
-        string excuse = string.Format(template, wildcard);
+        Random random = new Random();
+        int index = random.Next(wildcards.Length);
+        string selectedWord = wildcards[index]; 
+
+        string excuse = string.Format(template, selectedWord);
 
 
         //Output 
